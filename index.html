@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Just In Case No One Told You Today - Ameer</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+  body {
+    margin: 0;
+    background: linear-gradient(135deg, #cce7f0, #e0c3fc);
+    font-family: 'Pacifico', cursive;
+    overflow: hidden;
+    height: 100vh;
+    color: #4a3c66;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+  .container {
+    background: rgba(255 255 255 / 0.85);
+    border-radius: 25px;
+    padding: 40px 30px;
+    width: 360px;
+    text-align: center;
+    box-shadow: 0 0 20px rgba(162, 133, 255, 0.4);
+    z-index: 10;
+  }
+  h1 {
+    margin-bottom: 25px;
+    font-size: 2.4rem;
+    color: #6a4b8c;
+    text-shadow: 0 0 10px #cbb4f2;
+  }
+  p {
+    font-size: 1.3rem;
+    margin: 15px 0;
+    opacity: 0;
+    animation: fadeIn 2s forwards;
+  }
+  p:nth-child(2) { animation-delay: 0.3s; }
+  p:nth-child(3) { animation-delay: 0.8s; }
+  p:nth-child(4) { animation-delay: 1.3s; }
+  p:nth-child(5) { animation-delay: 1.8s; }
+  p:nth-child(6) { animation-delay: 2.3s; }
+
+  @keyframes fadeIn {
+    to { opacity: 1; }
+  }
+  footer {
+    margin-top: 30px;
+    font-style: italic;
+    font-family: 'Arial', sans-serif;
+    color: #6a4b8c;
+    font-size: 0.95rem;
+  }
+
+  /* Floating hearts */
+  .heart {
+    position: fixed;
+    font-size: 1.5rem;
+    color: #d58fff;
+    animation-name: floatUp;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    opacity: 0.8;
+    user-select: none;
+    pointer-events: none;
+  }
+  @keyframes floatUp {
+    0% { transform: translateY(100vh) translateX(0) rotate(0deg); opacity: 0.8; }
+    100% { transform: translateY(-10vh) translateX(20px) rotate(360deg); opacity: 0; }
+  }
+</style>
+</head>
+<body>
+  <div class="container" role="main" aria-label="Encouraging messages for Ameer">
+    <h1>Just In Case No One Told You Today...</h1>
+    <p>You are loved more than words can say.</p>
+    <p>Your smile brightens the darkest days.</p>
+    <p>It’s okay to rest and take time for yourself.</p>
+    <p>You make the world a better place simply by being in it.</p>
+    <p>Keep shining, no matter what.</p>
+    <p>And remember, I’m always here for you. 💙</p>
+    <footer>With all my love, Tash</footer>
+  </div>
+
+  <script>
+    // Create floating hearts
+    const colors = ['#d58fff', '#a370ff', '#cbb4f2', '#f5a8f3'];
+    function createHeart() {
+      const heart = document.createElement('div');
+      heart.classList.add('heart');
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.fontSize = (Math.random() * 1.5 + 1) + 'rem';
+      heart.style.color = colors[Math.floor(Math.random() * colors.length)];
+      heart.style.animationDuration = (5 + Math.random() * 5) + 's';
+      heart.textContent = '❤️';
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 10000);
+    }
+    setInterval(createHeart, 400);
+  </script>
+</body>
+</html>
